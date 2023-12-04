@@ -3,6 +3,8 @@ package ch.zli.m223.model;
 import javax.persistence.*;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.time.LocalDateTime;
 
@@ -18,6 +20,10 @@ public class Booking {
 
   @Column(nullable = false)
   private boolean approved;
+  
+  @ManyToOne(optional = false)
+  @Fetch(FetchMode.JOIN)
+  private ApplicationUser applicationUser;
 
   public Long getId() {
     return id;
@@ -41,6 +47,14 @@ public class Booking {
 
   public void setApproved(boolean approved) {
     this.approved = approved;
+  }
+
+  public ApplicationUser getApplicationUser() {
+    return applicationUser;
+  }
+
+  public void setApplicationUser(ApplicationUser applicationUser) {
+    this.applicationUser = applicationUser;
   }
 
 }
