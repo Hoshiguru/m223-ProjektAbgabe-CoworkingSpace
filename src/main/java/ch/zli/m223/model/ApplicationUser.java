@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -39,6 +40,10 @@ public class ApplicationUser {
 
   @Column 
   private String lastName;
+
+  @ManyToOne(optional = false)
+  @Fetch(FetchMode.JOIN)
+  private Role role;
 
   @OneToMany(mappedBy = "applicationUser")
   @JsonIgnoreProperties("applicaitonUser")
@@ -91,5 +96,13 @@ public class ApplicationUser {
 
   public void setBookings(Set<Booking> bookings) {
     this.bookings = bookings;
+  }
+
+  public Role getRole() {
+    return role;
+  }
+
+  public void setRole(Role role) {
+    this.role = role;
   }
 }
