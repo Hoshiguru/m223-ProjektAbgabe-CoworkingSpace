@@ -1,0 +1,16 @@
+[
+    {
+        "email": "lennard.lee@coworking.com",
+        "password": "SuperSecurePassword123",
+        "firstName": "Lennard",
+        "lastName": "Lee",
+        "role": "Admin"
+    }, 
+    {
+        "email": "susanne.schmidt@gmail.com",
+        "password": "FriedeFreudeEierkuchen",
+        "firstName": "",
+        "lastName": "",
+        "role": "Member"
+    }
+]

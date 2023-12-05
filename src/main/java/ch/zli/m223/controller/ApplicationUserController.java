@@ -63,6 +63,7 @@ public class ApplicationUserController {
   @Operation(summary = "Deletes an user.", description = "Deletes an user by its id."
   )
   @RolesAllowed("Admin")
+
   public void delete(@PathParam("id") Long id) {
     userService.deleteUser(id);
   }

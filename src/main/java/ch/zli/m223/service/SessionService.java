@@ -1,7 +1,8 @@
 package ch.zli.m223.service;
 
 import java.time.Duration;
-
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -27,7 +28,7 @@ public class SessionService {
         String token = Jwt
             .issuer("https://zli.example.com/")
             .upn(credential.getEmail())
-            .groups(principal.get().getRole())
+            .groups(new HashSet<>(Arrays.asList(principal.get().getRole())))
             .expiresIn(Duration.ofHours(12))
             .sign();
         return Response
@@ -42,4 +43,23 @@ public class SessionService {
 
     return Response.status(Response.Status.FORBIDDEN).build();
   }
+
+  public Response logout(Credential credential) {
+    Optional<ApplicationUser> principal = applicationUserService.findByEmail(credential.getEmail());
+
+    try {
+      if (principal.isPresent() && principal.get().getPassword().equals(credential.getPassword())) {
+        return Response
+            .ok(principal.get())
+            .cookie(new NewCookie("coworking_space", ""))
+            .header("Authorization", "Bearer " + "")
+            .build();
+      }
+    } catch (Exception e) {
+      System.err.println("Couldn't validate password.");
+    }
+
+    return Response.status(Response.Status.FORBIDDEN).build();
+  }
+
 }

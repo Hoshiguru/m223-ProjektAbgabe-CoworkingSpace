@@ -19,6 +19,9 @@ public class Booking {
   private LocalDateTime bookingTime;
 
   @Column(nullable = false)
+  private LocalDateTime endTime;
+
+  @Column(nullable = false)
   private boolean approved;
   
   @ManyToOne(optional = false)
@@ -39,6 +42,14 @@ public class Booking {
 
   public void setBookingTime(LocalDateTime bookingTime) {
     this.bookingTime = bookingTime;
+  }  
+
+  public LocalDateTime getEndTime() {
+    return endTime;
+  }
+
+  public void setEndTime(LocalDateTime endTime) {
+    this.endTime = endTime;
   }
 
   public boolean isApproved() {
@@ -56,5 +67,4 @@ public class Booking {
   public void setApplicationUser(ApplicationUser applicationUser) {
     this.applicationUser = applicationUser;
   }
-
 }

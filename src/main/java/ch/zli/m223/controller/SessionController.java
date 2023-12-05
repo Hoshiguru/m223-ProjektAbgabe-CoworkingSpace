@@ -36,7 +36,7 @@ public class SessionController {
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
   @Operation(summary = "Logout", description = "Removes JWT")
-  public Response logout(){
-    return null;
+  public Response logout(Credential credential){
+    return this.sessionService.logout(credential);
   }
 }
