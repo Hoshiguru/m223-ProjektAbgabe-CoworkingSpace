@@ -17,11 +17,6 @@ public class ApplicationUserService {
 
     @Transactional
     public ApplicationUser createUser(ApplicationUser user) {
-        if(user.getId() == 1){
-            user.setRole("Admin");
-        } else {
-            user.setRole("Member");
-        }
         return entityManager.merge(user);
     }
 
@@ -45,6 +40,21 @@ public class ApplicationUserService {
     public List<ApplicationUser> findAll() {
         var query = entityManager.createQuery("FROM ApplicationUser", ApplicationUser.class);
         return query.getResultList();
+    }
+
+    @Transactional
+    public ApplicationUser registerUser(ApplicationUser user){
+
+        int users = findAll().size();
+        ApplicationUser createdUser = createUser(user);
+
+        if (users == 0) {
+            createdUser.setRole("Admin");
+        } else {
+            createdUser.setRole("Member");
+        }
+
+        return updateUser(createdUser.getId(), createdUser);
     }
 
     public Optional<ApplicationUser> findByEmail(String email) {

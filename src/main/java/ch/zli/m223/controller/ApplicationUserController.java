@@ -24,7 +24,7 @@ import ch.zli.m223.service.ApplicationUserService;
 
 @Path("/users")
 @Tag(name = "Users", description = "Handling of users")
-@RolesAllowed({ "Member", "Admin" })
+@RolesAllowed({"Member", "Admin"})
 public class ApplicationUserController {
   
   @Inject
@@ -34,6 +34,7 @@ public class ApplicationUserController {
   @Produces(MediaType.APPLICATION_JSON)
   @Operation(summary = "Index all users.", description = "Returns a list of all users."
   )
+  @RolesAllowed("Admin")
   public List<ApplicationUser> index() {
       return userService.findAll();
   }
@@ -54,7 +55,7 @@ public class ApplicationUserController {
   )
   @PermitAll
   public ApplicationUser create(ApplicationUser user) {
-     return userService.createUser(user);
+     return userService.registerUser(user);
   }
 
   @Path("/{id}")
@@ -63,13 +64,14 @@ public class ApplicationUserController {
   )
   @RolesAllowed("Admin")
   public void delete(@PathParam("id") Long id) {
-      userService.deleteUser(id);
+    userService.deleteUser(id);
   }
 
   @Path("/{id}")
   @PUT
   @Operation(summary = "Updates an user.", description = "Updates an user by its id."
   )
+  @RolesAllowed("Admin")
   public ApplicationUser update(@PathParam("id") Long id, ApplicationUser user) {
       return userService.updateUser(id, user);
   }

@@ -34,12 +34,14 @@ public class ApplicationUser {
   @Column(nullable = false)
   private String password;
 
-  @Column
+  @Column(nullable = true)
   private String firstName;
 
-  @Column 
+  @Column(nullable = true)
   private String lastName;
 
+  @Column(nullable = false)
+  @Schema(readOnly = true)
   private String role;
 
   @OneToMany(mappedBy = "applicationUser")

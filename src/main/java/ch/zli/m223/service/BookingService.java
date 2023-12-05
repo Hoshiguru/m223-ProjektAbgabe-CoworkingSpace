@@ -24,6 +24,7 @@ public class BookingService {
         var query = entityManager.createQuery("FROM Booking", Booking.class);
         return query.getResultList();
     }
+    
     @Transactional
     public void deleteBooking(Long id) {
         var entity = entityManager.find(Booking.class, id);
