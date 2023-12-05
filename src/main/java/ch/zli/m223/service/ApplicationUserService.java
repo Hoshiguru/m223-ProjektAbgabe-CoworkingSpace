@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import ch.zli.m223.model.ApplicationUser;
-import ch.zli.m223.model.Role;
 
 @ApplicationScoped
 public class ApplicationUserService {
@@ -18,13 +17,10 @@ public class ApplicationUserService {
 
     @Transactional
     public ApplicationUser createUser(ApplicationUser user) {
-        Role role = new Role();
         if(user.getId() == 1){
-            role.setTitle("admin");
-            user.setRole(role);
+            user.setRole("Admin");
         } else {
-            role.setTitle("member");
-            user.setRole(role);
+            user.setRole("Member");
         }
         return entityManager.merge(user);
     }
