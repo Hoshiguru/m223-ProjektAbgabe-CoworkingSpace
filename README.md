@@ -14,7 +14,8 @@ Mit Coworking Spaces Programm, welches mit Quarkus entwickelt wird, bei dem man 
 1. Starte das Projekt mit dem Kommando `Quarkus: Debug current Quarkus Project`
 1. Probiere die Client-Applikation unter http://localhost:8080 aus.
 1. Schaue die API auf http://localhost:8080/q/swagger-ui/ an.
-
+1. Die Test sollten in Postman Ausgeführt werden. Die Tests sind '/src/test/resources/Session.postman_collection.json' und '/src/test/resources/User.postman_collection.json'. \
+Die Testdaten sollten auch noch benutzt werden. Die Testdaten sind in '/src/test/resources/testDatas.json'
 ## Datenbank
 
 Die Daten werden in einer PostgreSQL-Datenbank gespeichert. In der Entwicklungsumgebung wird diese in der [docker-compose-yml](./.devcontainer/docker-compose.yml) konfiguriert.

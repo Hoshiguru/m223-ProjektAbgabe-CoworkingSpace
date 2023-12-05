@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "aba7142f-a0f0-4a69-a2e0-201b1ebf3327",
+		"name": "Session",
+		"description": "Session",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31612221",
+		"_collection_link": "https://www.postman.com/hoshiguru/workspace/coworkspaces/collection/31612221-aba7142f-a0f0-4a69-a2e0-201b1ebf3327?action=share&creator=31612221&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lennard.lee\",\r\n    \"password\": \"SuperSecurePassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/session/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"session",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"lennard.lee@coworking.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/session/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"session",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
