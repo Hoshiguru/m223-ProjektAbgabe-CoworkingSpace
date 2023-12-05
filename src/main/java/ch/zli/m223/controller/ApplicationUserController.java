@@ -24,7 +24,7 @@ import ch.zli.m223.service.ApplicationUserService;
 
 @Path("/users")
 @Tag(name = "Users", description = "Handling of users")
-@RolesAllowed({ "User", "Admin" })
+@RolesAllowed({ "Member", "Admin" })
 public class ApplicationUserController {
   
   @Inject
@@ -36,6 +36,15 @@ public class ApplicationUserController {
   )
   public List<ApplicationUser> index() {
       return userService.findAll();
+  }
+
+  @Path("/{id}")
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  @Operation(summary = "Get 1 User.", description = "Returns one user."
+  )
+  public ApplicationUser findUser(@PathParam("id") Long id) {
+      return userService.findUser(id);
   }
 
   @POST
@@ -52,6 +61,7 @@ public class ApplicationUserController {
   @DELETE
   @Operation(summary = "Deletes an user.", description = "Deletes an user by its id."
   )
+  @RolesAllowed("Admin")
   public void delete(@PathParam("id") Long id) {
       userService.deleteUser(id);
   }

@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import ch.zli.m223.model.ApplicationUser;
+import ch.zli.m223.model.Role;
 
 @ApplicationScoped
 public class ApplicationUserService {
@@ -17,6 +18,14 @@ public class ApplicationUserService {
 
     @Transactional
     public ApplicationUser createUser(ApplicationUser user) {
+        Role role = new Role();
+        if(user.getId() == 1){
+            role.setTitle("admin");
+            user.setRole(role);
+        } else {
+            role.setTitle("member");
+            user.setRole(role);
+        }
         return entityManager.merge(user);
     }
 
@@ -30,6 +39,11 @@ public class ApplicationUserService {
     public ApplicationUser updateUser(Long id, ApplicationUser user) {
         user.setId(id);
         return entityManager.merge(user);
+    }
+
+    @Transactional
+    public ApplicationUser findUser(Long id){
+        return entityManager.find(ApplicationUser.class, id);
     }
 
     public List<ApplicationUser> findAll() {

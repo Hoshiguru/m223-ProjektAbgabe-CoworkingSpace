@@ -18,11 +18,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class Role {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(readOnly = true)
-    private Long id;
-
     @Column(nullable = false)
     private String title;
 
@@ -30,14 +25,6 @@ public class Role {
     @OneToMany(mappedBy = "role")
     @Fetch(FetchMode.JOIN)
     private Set<ApplicationUser> user;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
