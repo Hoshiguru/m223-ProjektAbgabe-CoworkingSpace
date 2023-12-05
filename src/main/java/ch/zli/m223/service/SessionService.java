@@ -48,7 +48,7 @@ public class SessionService {
     Optional<ApplicationUser> principal = applicationUserService.findByEmail(credential.getEmail());
 
     try {
-      if (principal.isPresent() && principal.get().getPassword().equals(credential.getPassword())) {
+      if (principal.isPresent()) {
         return Response
             .ok(principal.get())
             .cookie(new NewCookie("coworking_space", ""))
