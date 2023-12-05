@@ -1,0 +1,77 @@
+commit a563a4e627521bf5fa39696bc2667a83d0cb31da
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 16:46:28 2023 +0100
+
+    changes
+
+commit 22af648121f4b30074998c32c4e905bebba090da
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 15:40:55 2023 +0000
+
+    changes
+
+commit 4a85ac4723946879d08609347e48bb1cff01fa93
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 15:28:59 2023 +0000
+
+    changes
+
+commit ffb8f32c2ed094f828ac1096b50aafd35980f26b
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 12:36:16 2023 +0000
+
+    commited everything just because
+
+commit 95afdbaa73821a91ba7833551b4fe796e7e701ea
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 08:31:38 2023 +0000
+
+    Refactored attribute Role in ApplicationUser (maybe also delete Role.java in the future)
+
+commit 524e80f993b01729ffa39e59eb972b7e58e676a0
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 08:21:06 2023 +0000
+
+    chenged one to many reltation a little
+
+commit 28f34243689a8d3c97b7231f8d996b1fc756fecb
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 08:18:43 2023 +0000
+
+    added so i can apply a role to an ApplicationUser
+
+commit 841647963d7a6d897fa1edcb75beca33738a82d4
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 07:34:07 2023 +0000
+
+    added credentail
+
+commit faee76206ebb5a90c662a2f026a7e9f8f662d869
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Tue Dec 5 07:33:48 2023 +0000
+
+    added Role
+
+commit f3a00ac1a0b7ae6541788afde37eafc9c9730835
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Mon Dec 4 15:41:54 2023 +0000
+
+    Added ApplicationUser, ApplicationController, ApplicationUserService and altered Booking
+
+commit d32fae0a3613da11481c6d4eda3d20d0b42b6d2d
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Mon Dec 4 14:42:02 2023 +0000
+
+    removed everything around entry (controller, model, service)
+
+commit f37d4f8a16d6c923a46954317c4d93317a7fa8b3
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Mon Dec 4 14:41:06 2023 +0000
+
+    created everything around Booking (Controller, service, model)
+
+commit ad00f6300c0c1fcea887b494b5e469ea2014a4ac
+Author: ANDYS_LAPTOP\andyb <andybryanlam@gmail.com>
+Date:   Mon Dec 4 13:01:21 2023 +0000
+
+    initial commit
